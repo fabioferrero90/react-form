@@ -12,19 +12,17 @@ const NewPost = ({addFunc, posts}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let postId = 0;
-    const lastId = posts.reduce((max, post) => (post.id > max ? post.id : max), 0);
+    const lastId = posts.reduce((last, post) => (post.id > last ? post.id : last), 0);
     const newPost = {...postInsert,
         data: new Date().toLocaleDateString(),
         id: lastId + 1
     };
-    console.log(newPost)
     addFunc(newPost)
   };
 
   return (
     <>
-      <form className="col-3 border border-2 rounded p-4 m-4 h-50" onSubmit={handleSubmit}>
+      <form className="col-2 border border-2 rounded p-4 m-4 h-50" onSubmit={handleSubmit}>
         <h4 className="mb-4">Inserisci un nuovo articolo</h4>
         <div className="form-group">
           <label htmlFor="autore">Autore</label>

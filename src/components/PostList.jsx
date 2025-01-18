@@ -1,16 +1,23 @@
+
 import Post from './partials/Post';
 
-const PostList = ({posts, removeFunc}) => {
+function PostList({ posts, removeFunc, updateFunc }) {
   return (
-    <div className="col-8 my-4">
-      <h2 className="mb-4">Lista Articoli</h2>
-      <ul id="articleList" className="list-group">
-      {posts.map((post, index) => (
-        <Post key={"post-"+index} id={post.id} title={post.titolo} content={post.contenuto} date={post.data} author={post.autore} removeFunc={removeFunc}/>
+    <ul className="col-9 my-4 list-unstyled">
+      {posts.map((post) => (
+        <Post
+          key={post.id}
+          id={post.id}
+          title={post.titolo}
+          content={post.contenuto}
+          date={post.data}
+          author={post.autore}
+          removeFunc={removeFunc}
+          updateFunc={updateFunc}
+        />
       ))}
-      </ul>
-    </div>
-  )
+    </ul>
+  );
 }
 
-export default PostList
+export default PostList;
