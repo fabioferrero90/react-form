@@ -16,9 +16,11 @@ function App() {
   }
 
   return (
-    <div className="container mt-4">
-      <NewPost addFunc={addPost} posts={posts}/>
-      <PostList posts={posts} removeFunc={removePost} />
+    <div className="container">
+      <div className="row mt-4">
+        <NewPost addFunc={addPost} posts={posts}/>
+        <PostList posts={posts} removeFunc={removePost} />
+      </div>
     </div>
   )
 }

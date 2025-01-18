@@ -24,8 +24,8 @@ const NewPost = ({addFunc, posts}) => {
 
   return (
     <>
-      <form className="border border-2 rounded p-4 my-4" onSubmit={handleSubmit}>
-        <h2 className="mb-4">Inserisci un nuovo articolo</h2>
+      <form className="col-3 border border-2 rounded p-4 m-4 h-50" onSubmit={handleSubmit}>
+        <h4 className="mb-4">Inserisci un nuovo articolo</h4>
         <div className="form-group">
           <label htmlFor="autore">Autore</label>
           <select className="form-control" id="autore" name="autore" value={postInsert.autore} onChange={handleChange} required>
